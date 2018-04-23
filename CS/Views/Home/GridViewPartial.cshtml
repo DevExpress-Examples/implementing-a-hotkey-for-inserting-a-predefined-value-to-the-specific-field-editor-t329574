@@ -1,0 +1,20 @@
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "GridView";
+    settings.KeyFieldName = "Id";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "GridViewAddNewPartial" };
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowNewButtonInHeader = true;
+    settings.Columns.Add(column => {
+        column.FieldName = "Id";
+        column.ReadOnly = true;
+        column.EditFormSettings.Visible = DefaultBoolean.False;
+    });
+    settings.Columns.Add("Description"); 
+    settings.Columns.Add("Price"); 
+    settings.Columns.Add(column => {
+        column.FieldName = "RegisterDate";
+        column.ColumnType = MVCxGridViewColumnType.DateEdit;
+        ((DateEditProperties)column.PropertiesEdit).ClientSideEvents.KeyDown = "RegisterDate_KeyDown";
+    });
+}).Bind(Model).GetHtml()
