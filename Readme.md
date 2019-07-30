@@ -8,7 +8,7 @@
 <!-- default file list end -->
 # Implementing a hotkey for inserting a predefined value to the specific field editor
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t329574)**
+**[[Run Online]](https://codecentral.devexpress.com/t329574/)**
 <!-- run online end -->
 
 
